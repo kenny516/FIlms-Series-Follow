@@ -36,3 +36,9 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+# Ignorer les fichiers Firebase
+google-services.json
+GoogleService-Info.plist
+
+.env
