@@ -1,42 +1,50 @@
 {
-  "expo": {
-    "name": "filmSeries",
-    "slug": "filmSeries",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "googleServicesFile": "./app/google-services.json"
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+    "expo": {
+        "extra": {
+            "API_KEY": "AIzaSyArZVW0-D-QEBl1DOCq6suBLP-FAD0PwVM",
+            "AUTH_DOMAIN": "beginfirebase-a611a.firebaseapp.com",
+            "PROJECT_ID": "beginfirebase-a611a",
+            "STORAGE_BUCKET": "beginfirebase-a611a.appspot.com",
+            "MESSAGING_SENDER_ID": "715355576335",
+            "APP_ID": "1:715355576335:android:33e905089b58148160eb7a"
+        },
+        "name": "filmSeries",
+        "slug": "filmSeries",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/images/icon.png",
+        "scheme": "myapp",
+        "userInterfaceStyle": "automatic",
+        "newArchEnabled": true,
+        "ios": {
+            "supportsTablet": true
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/images/adaptive-icon.png",
+                "backgroundColor": "#ffffff"
+            },
+            "googleServicesFile": "./google-services.json"
+        },
+        "web": {
+            "bundler": "metro",
+            "output": "static",
+            "favicon": "./assets/images/favicon.png"
+        },
+        "plugins": [
+            "expo-router",
+            [
+                "expo-splash-screen",
+                {
+                    "image": "./assets/images/splash-icon.png",
+                    "imageWidth": 200,
+                    "resizeMode": "contain",
+                    "backgroundColor": "#ffffff"
+                }
+            ]
+        ],
+        "experiments": {
+            "typedRoutes": true
         }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true
     }
-  }
 }

@@ -1,13 +1,26 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app'; // Importer la fonction initializeApp
+import { getFirestore } from 'firebase/firestore'; // Importer Firestore
+import { getDatabase } from 'firebase/database'; // Importer Realtime Database
+
+import Constants from 'expo-constants';
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
+  apiKey: "AIzaSyArZVW0-D-QEBl1DOCq6suBLP-FAD0PwVM",
+  authDomain: "beginfirebase-a611a.firebaseapp.com",
+  projectId: "beginfirebase-a611a",
+  storageBucket: "beginfirebase-a611a.appspot.com",
+  messagingSenderId:"715355576335",
+  appId:"1:715355576335:android:33e905089b58148160eb7a"
 };
 
+// Initialiser Firebase avec la configuration
 const app = initializeApp(firebaseConfig);
-export default app;
+
+// Exporter Firestore et Realtime Database pour les utiliser ailleurs
+const db = getFirestore(app);
+const database = getDatabase(app);
+const auth = getAuth(app);
+const firestore = getFirestore(app);
+
+export { firestore,app, db, database,auth};
