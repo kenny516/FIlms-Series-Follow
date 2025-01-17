@@ -20,7 +20,9 @@ const app = initializeApp(firebaseConfig);
 // Exporter Firestore et Realtime Database pour les utiliser ailleurs
 const db = getFirestore(app);
 const database = getDatabase(app);
-const auth = getAuth(app);
+const auth = initializeAuth(app, {
+    persistence: getReactNativePersistence(AsyncStorage),
+  });
 const firestore = getFirestore(app);
 
 export { firestore,app, db, database,auth};
