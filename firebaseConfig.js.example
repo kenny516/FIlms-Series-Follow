@@ -1,0 +1,28 @@
+import { initializeApp } from 'firebase/app'; // Importer la fonction initializeApp
+import { getFirestore } from 'firebase/firestore'; // Importer Firestore
+import { getDatabase } from 'firebase/database'; // Importer Realtime Database
+
+import Constants from 'expo-constants';
+import { getAuth } from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId:"",
+  appId:""
+};
+
+// Initialiser Firebase avec la configuration
+const app = initializeApp(firebaseConfig);
+
+// Exporter Firestore et Realtime Database pour les utiliser ailleurs
+const db = getFirestore(app);
+const database = getDatabase(app);
+const auth = initializeAuth(app, {
+    persistence: getReactNativePersistence(AsyncStorage),
+  });
+const firestore = getFirestore(app);
+
+export { firestore,app, db, database,auth};
