@@ -57,7 +57,7 @@ export default function SignupScreen() {
         >
             <StatusBar style={theme.dark ? 'light' : 'dark'} />
             <LinearGradient
-                colors={colors.background}
+                colors={[colors.background[0], colors.background[1]]}
                 style={styles.gradient}
             >
                 <View style={styles.contentContainer}>

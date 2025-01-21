@@ -3,7 +3,7 @@ import { useFonts } from 'expo-font';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
@@ -19,6 +19,7 @@ export default function RootLayout() {
     });
 
     const segments = useSegments();
+    const [initialAuthCheck, setInitialAuthCheck] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
@@ -36,12 +37,13 @@ export default function RootLayout() {
             } else if (user && firstSegment === '(auth)') {
                 router.replace('/(tabs)');
             }
+            setInitialAuthCheck(true);
         });
 
         return () => unsubscribe();
     }, [segments]);
 
-    if (!loaded) {
+    if (!loaded || initialAuthCheck) {
         return null;
     }
 
